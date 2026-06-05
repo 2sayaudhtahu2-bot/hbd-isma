@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Isma 🌷</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background: linear-gradient(
+        135deg,
+        #ffd6e8,
+        #ffc1da,
+        #ffb3d1
+    );
+    overflow-x:hidden;
+    min-height: 100vh;
+}
+
+/* Tulip Jatuh */
+.tulip{
+    position:fixed;
+    top: -50px;
+    font-size:24px;
+    animation:fall linear infinite;
+    z-index:1;
+    opacity:0.8;
+    pointer-events: none; /* Supaya tidak mengganggu klik layar */
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(115vh) rotate(360deg);
+    }
+}
+
+/* Halaman Awal (Hero) */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    z-index:2;
+    transition: opacity 0.8s ease;
+}
+
+.hero h1{
+    font-size:3.2rem;
+    color:#ff4d8d;
+    margin-bottom:15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+}
+
+.hero p{
+    color:#6b4b57;
+    font-size:1.2rem;
+    max-width:500px;
+    font-weight: 500;
+}
+
+.btn{
+    margin-top:30px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#ff5f9e;
+    color:white;
+    font-size:1.1rem;
+    font-weight: bold;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(255, 95, 158, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    background:#ff478c;
+    box-shadow:0 12px 30px rgba(255, 95, 158, 0.6);
+}
+
+/* Bagian Isi Website */
+.content{
+    display:none;
+    padding:40px 20px;
+    position:relative;
+    z-index:2;
+}
+
+.card{
+    max-width:650px;
+    margin:auto;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    padding:35px;
+    border-radius:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.section-title{
+    text-align:center;
+    color:#ff4d8d;
+    margin-bottom:25px;
+    font-size: 2rem;
+}
+
+/* Galeri Foto Grid yang Rapi */
+.gallery{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.photo {
+    width:100%;
+    border-radius:18px;
+    object-fit:cover;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+    transition: transform 0.3s ease;
+}
+
+.photo:hover {
+    transform: scale(1.02);
+}
+
+.portrait{
+    aspect-ratio: 3/4; /* Proporsi portrait tegak yang ideal */
+}
+
+.landscape{
+    grid-column: 1 / span 2;
+    aspect-ratio: 16/10; /* Menyatu rapi untuk screenshot game/lebar */
+}
+
+/* Pesan Surat */
+.message{
+    line-height:1.8;
+    color:#4a4a4a;
+    text-align:left;
+    margin-top:20px;
+    font-size: 1.05rem;
+}
+
+.message p {
+    margin-bottom: 15px;
+}
+
+.footer{
+    text-align:center;
+    margin-top:35px;
+    padding-top: 20px;
+    border-top: 1px dashed #ffb3d1;
+    color:#ff4d8d;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Efek Halus Muncul */
+.fade{
+    opacity:0;
+    transform:translateY(40px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Pengatur Musik Latar Belakang (Opsional) -->
+<!-- Ganti URL di bawah dengan link lagu romantis format .mp3 jika punya -->
+<audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Halaman Awal -->
+<section class="hero">
+    <h1>🎂 Happy Birthday 🎂</h1>
+    <p>Ada kejutan manis buat Isma lhooo...</p>
+    <button class="btn" onclick="openGift()">klik akuu 💌</button>
+</section>
+
+<!-- Isi Website -->
+<section class="content" id="content">
+    <div class="card fade">
+        <h2 class="section-title">🌷 Untuk Kamu 🌷</h2>
+
+        <!-- Wadah Galeri yang Sudah Diperbaiki jalurnya -->
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Foto Isma 1" class="photo portrait">
+            <img src="foto2.jpg" alt="Foto Isma 2" class="photo portrait">
+            <img src="foto3.png" alt="Screenshot Roblox" class="photo landscape">
+        </div>
+
+        <div class="message">
+            <p>Selamat ulang tahun yaa cantik 🎉</p>
+            
+            <p>Semoga di umur yang baru ini Isma selalu diberi kesehatan, kebahagiaan, dan dipermudah dalam mencapai semua hal yang Isma impikan.</p>
+            
+            <p>Makasih yaa sudah menjadi orang yang baik, menyenangkan, dan membawa banyak cerita indah bagi orang-orang di sekitarmu termasuk Dyo.</p>
+            
+            <p>Semoga Isma hari ini dan selamanya dipenuhi banyak senyuman, tawa, dan kebahagiaan. Jangan lupa maem yaa, sama jangan lupakan Dyo dan teman-teman yang lain.</p>
+            
+            <p style="font-weight: bold; color: #ff4d8d; text-align: center; font-size: 1.2rem; margin-top: 25px;">
+                Happy Birthday Sayang 🤍 ✨
+            </p>
+        </div>
+
+        <div class="footer">
+            🌷 Lov yu Isma 🌷
+        </div>
+    </div>
+</section>
+
+<script>
+// Fungsi membuka hadiah
+function openGift(){
+    // Putar musik secara otomatis saat tombol diklik (karena aturan browser masa kini melarang musik berputar otomatis sebelum ada interaksi)
+    const musik = document.getElementById('bgMusic');
+    if(musik) {
+        musik.volume = 0.4; // Mengatur volume agar tidak terlalu keras (0.0 sampai 1.0)
+        musik.play().catch(e => console.log("Musik butuh izin interaksi tambahan"));
+    }
+
+    // Animasi menghilang untuk halaman utama
+    const hero = document.querySelector('.hero');
+    hero.style.opacity = '0';
+    
+    setTimeout(() => {
+        hero.style.display = 'none';
+        const content = document.getElementById('content');
+        content.style.display = 'block';
+        
+        // Memunculkan kartu ucapan dengan halus
+        setTimeout(() => {
+            document.querySelector('.fade').classList.add('show');
+        }, 100);
+    }, 800);
+}
+
+// Logika pembuat Tulip berjatuhan
+for(let i=0; i<30; i++){
+    let flower = document.createElement('div');
+    flower.classList.add('tulip');
+    flower.innerHTML = '🌷';
+
+    flower.style.left = Math.random() * 100 + 'vw';
+    
+    // Kecepatan jatuh bervariasi antara 4 sampai 10 detik
+    flower.style.animationDuration = (4 + Math.random() * 6) + 's';
+    
+    // Waktu jeda muncul agar bergantian
+    flower.style.animationDelay = Math.random() * 6 + 's';
+
+    document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
